@@ -4,4 +4,11 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('hello gj!')
+    # return HttpResponse('<h1>hello django!</h1>')
+    return render(request, './index.html')
+
+
+def password(request):
+    length = request.GET.get('length')
+    input_length = request.GET.get('input-length')
+    return render(request, './password.html', {'password': 'abcde'})
