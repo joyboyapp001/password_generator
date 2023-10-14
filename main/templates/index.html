@@ -1,33 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+< <title>首頁</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>首頁</title>
-</head>
+        .label {
+            color: white;
+        }
 
-<body>
-    <h1>密碼產生器</h1>
-    <form action="{% url 'password' %}">
-        <label for="length">密碼長度</label>
-        <select name="length" id="length">
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8" selected="selected">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <label for="input-length">自定義長度</label>
-        <input type="number" class="input" name="input-length" id="input-length"><br>
-        <input type="radio" name="uppercase" id="uppercase">大寫
-        <input type="radio" name="number" id="number">數字
-        <input type="radio" name="special" id="special">特殊
-        <p>
-            <input type="submit" value="產生" name="generator">
-            <input type="reset" value="重置">
-        </p>
-    </form>
-</body>
+        input {
+            text-align: center;
+        }
+    </style>
+    </head>
 
-</html>
+    <body>
+        <h1>密碼產生器</h1>
+        <form action="{% url 'password' %}">
+            <label for="length">密碼長度</label>
+            <select name="length" id="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8" selected="selected">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <label for="input-length">自定義長度</label>
+            <input type="number" name="input-length" id="input-length"><br>
+            <input type="checkbox" name="uppercase" id="uppercase">大寫
+            <input type="checkbox" name="number" id="number">數字
+            <input type="checkbox" name="special" id="special">特殊符號
+            <p>
+                <input type="submit" value="產生" name="generator">
+                <input type="reset" value="重置">
+            </p>
+        </form>
+        <div class="hero is-warning is-fullheight">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="columns">
+                        <div class="column has-text-centered">
+                            <p class="title is-size-2 mb-1">密碼產生器</p>
+                        </div>
+                    </div>
+                    <div class="columns is-centered mb-6">
+                        <div class="column is-8">
+                            <form action="password/" class="box has-background-info has-text-white">
+                                <div class="field">
+                                    <label for="input-length" class="label">自定義長度
+                                        <div class="control">
+                                            <input type="number" class="input" name="input-length"
+                                                id="input-length"><br>
+                                            <div class="select mt-2">
+                                                <select name="length" id="length" class="is-size-6">
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8" selected="selected">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+
+                                    </label>
+                                </div>
+                        </div>
+
+                        <div class="control">
+                            <label for="uppercase" class="radio">大寫
+                                <input type="radio" name="uppercase" id="uppercase">
+                            </label>
+                            <label for="number" class="radio">數字
+                                <input type="radio" name="number" id="number">
+                            </label>
+                            <label for="special" class="radio">特殊
+                                <input type="radio" name="special" id="special">
+                            </label>
+                        </div>
+                        <div class="field">
+                            <input type="submit" class="button is-primary" value="產生" name="generator">
+                            <input type="reset" class="button is-danger" value="重置">
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
